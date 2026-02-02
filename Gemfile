@@ -6,6 +6,21 @@ gem "guard", "~> 2.19"
 gem "guard-puma", "~> 0.8"
 gem "zeitwerk", "~> 2.6"
 
+gem "rake", ">= 12.3.3"
+
+group :test do
+  gem "simplecov", require: false, platforms: :ruby
+  gem "simplecov-cobertura", require: false, platforms: :ruby
+  gem "rexml", require: false
+
+  gem "warning"
+end
+
+group :tools do
+  gem "rubocop"
+end
+
+
 unless ENV["CI"]
   gem "yard", require: false
 end
